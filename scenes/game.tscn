@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=4 uid="uid://lxd0bnujwjsf"]
+[gd_scene load_steps=15 format=4 uid="uid://lxd0bnujwjsf"]
 
+[ext_resource type="Script" uid="uid://c3taitky2mgs6" path="res://scripts/game_manager.gd" id="1_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://phgbri7rmxnw" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://dok70xk0npsc4" path="res://assets/sprites/world_tileset.png" id="1_yqjtg"]
+[ext_resource type="FontFile" uid="uid://bag3x48ei43id" path="res://assets/fonts/PixelOperator8.ttf" id="2_gee14"]
 [ext_resource type="PackedScene" uid="uid://codqwotrmhka8" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://lpxbjw3lryby" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://ufmx1lh832oo" path="res://scenes/killzone.tscn" id="5_iywne"]
@@ -223,6 +225,20 @@ _data = {
 [node name="Game" type="Node2D"]
 position = Vector2(0, 1)
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_u5sy4")
+
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+z_index = 5
+offset_left = -140.0
+offset_top = -93.0
+offset_right = -38.0
+offset_bottom = -70.0
+theme_override_fonts/font = ExtResource("2_gee14")
+theme_override_font_sizes/font_size = 8
+text = "SCORE: 0"
+
 [node name="TileMaps" type="Node" parent="."]
 
 [node name="Background" type="TileMapLayer" parent="TileMaps"]
@@ -272,5 +288,7 @@ libraries = {
 }
 autoplay = "Move"
 
-[node name="Enemy" parent="." instance=ExtResource("6_p57ef")]
-position = Vector2(28, 17)
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("6_p57ef")]
+position = Vector2(28, 18)
