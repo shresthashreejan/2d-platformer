@@ -274,6 +274,12 @@ shape = SubResource("WorldBoundaryShape2D_p57ef")
 [node name="Coin" parent="Coins" instance=ExtResource("4_lbhrr")]
 position = Vector2(144, -13)
 
+[node name="Coin25" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(54, 5)
+
+[node name="Coin26" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(73, 5)
+
 [node name="Coin12" parent="Coins" instance=ExtResource("4_lbhrr")]
 position = Vector2(292, -73)
 
@@ -307,6 +313,9 @@ position = Vector2(678, -127)
 [node name="Coin6" parent="Coins" instance=ExtResource("4_lbhrr")]
 position = Vector2(869, -21)
 
+[node name="Coin24" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(823, -93)
+
 [node name="Coin7" parent="Coins" instance=ExtResource("4_lbhrr")]
 position = Vector2(885, -21)
 
@@ -314,36 +323,31 @@ position = Vector2(885, -21)
 position = Vector2(978, -6)
 
 [node name="Coin8" parent="Coins" instance=ExtResource("4_lbhrr")]
-position = Vector2(1257, -93)
-rotation = 1.5707964
-
-[node name="Coin19" parent="Coins" instance=ExtResource("4_lbhrr")]
-position = Vector2(1175, -73)
-rotation = 1.5707964
-
-[node name="Coin20" parent="Coins" instance=ExtResource("4_lbhrr")]
-position = Vector2(1063, -57)
-rotation = 1.5707964
-
-[node name="Coin21" parent="Coins" instance=ExtResource("4_lbhrr")]
-position = Vector2(1081, -57)
-rotation = 1.5707964
-
-[node name="Coin22" parent="Coins" instance=ExtResource("4_lbhrr")]
-position = Vector2(1528, -73)
-rotation = 1.5707964
+position = Vector2(1017, -62)
 
 [node name="Coin9" parent="Coins" instance=ExtResource("4_lbhrr")]
-position = Vector2(1288, -117)
-rotation = 1.5707964
+position = Vector2(1033, -62)
 
 [node name="Coin10" parent="Coins" instance=ExtResource("4_lbhrr")]
-position = Vector2(1356, -127)
-rotation = 1.5707964
+position = Vector2(1114, -56)
 
 [node name="Coin11" parent="Coins" instance=ExtResource("4_lbhrr")]
-position = Vector2(1376, -127)
-rotation = 1.5707964
+position = Vector2(1239, -71)
+
+[node name="Coin19" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(1224, -71)
+
+[node name="Coin20" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(1527, -73)
+
+[node name="Coin21" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(1382, -104)
+
+[node name="Coin23" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(1367, -104)
+
+[node name="Coin22" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(1398, -104)
 
 [node name="Platforms" type="Node" parent="."]
 

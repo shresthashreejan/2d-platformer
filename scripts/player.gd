@@ -2,8 +2,12 @@ extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
+const DASH_SPEED = 500.0
+
+var dash = false;
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var dash_timer = $Timer
 
 var air_jumps = 1
 var current_air_jumps = 0
@@ -29,6 +33,10 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jump_buffer_timer = JUMP_BUFFFER_TIME_THRESHOLD
 
+	if Input.is_action_just_pressed("dash"):
+		dash = true;
+		dash_timer.start()
+
 	if jump_buffer_timer > 0:
 		if is_on_floor() or coyote_timer > 0:
 			velocity.y = JUMP_VELOCITY
@@ -42,10 +50,16 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 
 	if direction:
-		velocity.x = direction * SPEED
+		if dash:
+			velocity.x = direction * DASH_SPEED
+		else:
+			velocity.x = direction * SPEED
 		if animated_sprite_2d:
 			animated_sprite_2d.flip_h = (direction < 0)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func _on_timer_timeout() -> void:
+	dash = false
